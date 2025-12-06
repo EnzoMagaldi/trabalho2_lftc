@@ -20,7 +20,7 @@ def formatarRegras(): # Para remover o "q" dos estados, deixando apenas o númer
     regras = list(regra.replace("q", "") for regra in regras) #Cria uma nova lista, mas sem os "q"s das regras
 
 def tratarCadeia(cadeia):
-    return list("1" + cadeia + "/")
+    return list(cadeia + "/")
 
 def organizarRegras(): 
     for regra in regras:
@@ -31,12 +31,21 @@ def organizarRegras():
     return conjuntosRegras
 
 def aplicarRegra(cadeia, pos, so, mov):
-    cadeia[pos] = so  # sobrescreve símbolo
+    cadeia[pos] = so
 
     if mov.upper() == "D":
         pos += 1
+        # Se saiu da fita, adiciona símbolo branco
+        if pos == len(cadeia):
+            cadeia.append("/")   # símbolo branco padrão
+            
+    # Movimento para a esquerda
     elif mov.upper() == "E":
         pos -= 1
+        # Se saiu à esquerda, adiciona branco no início
+        if pos < 0:
+            cadeia.insert(0, "/")
+            pos = 0  # cabeça ajustada para o novo início
 
     return cadeia, pos
 
@@ -60,6 +69,7 @@ def lerCadeia(cadeia):
     pos = 0           # cabeça no início
 
     while True:
+        # Aceitação
         if estado == "F":
             print("Cadeia aceita!")
             return True
