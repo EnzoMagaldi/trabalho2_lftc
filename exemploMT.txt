@@ -1,0 +1,20 @@
+cadeia aceita: aabbcc
+
+cadeia não aceita: aabbc
+
+q1aq2XD
+q2aq2aD
+q2bq3YD
+q3bq3bD
+q3cq4ZE
+q4bq4bE
+q4Yq4YE
+q4aq4aE
+q4Xq1XD
+q2Yq2YD
+q3Zq3ZD
+q4Zq4ZE
+q1Yq5YD
+q5Yq5YD
+q5Zq5ZD
+q5/q6FD
