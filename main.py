@@ -81,27 +81,51 @@ def lerCadeia(cadeia):
             return False
         estado = novo_estado
         pos = nova_pos
+
+
+while True:
+    print("\n")
+    print("[Máquina de Turing]")
+    print("-----------------------------------------------------")
+    print("1 - Ler arquivo de regras")
+    print("2 - Verificar correspondência")
+    print("3 - Sair")
+    print("-----------------------------------------------------\n")
+    
+    opcao = input("Escolha uma opção: ")
+    
+    if opcao == "1":
+        print("\nLendo regras...")
+        lerArquivoRegras()
         
-
-print("Lendo regras...")
-lerArquivoRegras()
-
-print("Formatando regras...")
-formatarRegras()
-
-print("Organizando regras...")
-organizarRegras()
-
-print("Lendo cadeia...")
-cadeia = lerArquivoCadeia()
-
-print("Preparando cadeia...")
-cadeia = tratarCadeia(cadeia)
-
-print("Iniciando simulação da Máquina de Turing...")
-resultado = lerCadeia(cadeia)
-
-if resultado:
-    print("Resultado: Cadeia aceita.")
-else:
-    print("Resultado: Cadeia rejeitada.")
+        print("Formatando regras...")
+        formatarRegras()
+        
+        print("Organizando regras...")
+        organizarRegras()
+        
+        print("Arquivo carregado!")
+        
+    elif opcao == "2":
+        if not regras:
+            print("\n[X] Nenhuma regra carregada! Escolha a opção 1 primeiro.")
+            continue
+            
+        print("\nLendo cadeia...")
+        cadeia = lerArquivoCadeia()
+        
+        print("Preparando cadeia...")
+        cadeia = tratarCadeia(cadeia)
+        resultado = lerCadeia(cadeia)
+        
+        if resultado:
+            print("Resultado: Cadeia aceita.")
+        else:
+            print("Resultado: Cadeia rejeitada.")
+            
+    elif opcao == "3":
+        print("\nPrograma encerrado")
+        break
+        
+    else:
+        print("\nOpção inválida!")
