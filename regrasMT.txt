@@ -1,5 +1,16 @@
-q1 b q1 b D
-q1 a q2 a D
-q2 b qF b E
+q1 a q2 X D
 q2 a q2 a D
-
+q2 b q3 Y D
+q3 b q3 b D
+q3 c q4 Z E
+q4 b q4 b E
+q4 Y q4 Y E
+q4 a q4 a E
+q4 X q1 X D
+q2 Y q2 Y D
+q3 Z q3 Z D
+q4 Z q4 Z E
+q1 Y q5 Y D
+q5 Y q5 Y D
+q5 Z q5 Z D
+q5 / qF F D
