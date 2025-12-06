@@ -1,0 +1,4 @@
+q1 b q1 b D
+q1 a q2 a D
+q2 b qF b E
+q2 a qF a D
